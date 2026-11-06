@@ -45,14 +45,13 @@ describe("terminal theme derivation", () => {
     }
   });
 
-  it("is Ghostty Default Style Dark, so the terminal matches the user's own terminal", () => {
-    // Verbatim from the theme file shipped with Ghostty on this machine.
-    expect(GHOSTTY_DEFAULT_DARK.background).toBe("#282c34");
-    expect(GHOSTTY_DEFAULT_DARK.foreground).toBe("#ffffff");
-    expect(GHOSTTY_DEFAULT_DARK.cursor).toBe("#ffffff");
-    // Ghostty inverts the selection: white ground, terminal-background ink.
-    expect(GHOSTTY_DEFAULT_DARK.selectionBackground).toBe("#ffffff");
-    expect(GHOSTTY_DEFAULT_DARK.selectionForeground).toBe("#282c34");
+  it("is Omarchy Last Horizon, so the terminal matches the user's own terminal", () => {
+    // Verbatim from the theme's ghostty.conf.
+    expect(GHOSTTY_DEFAULT_DARK.background).toBe("#0c0b0c");
+    expect(GHOSTTY_DEFAULT_DARK.foreground).toBe("#fafcfb");
+    expect(GHOSTTY_DEFAULT_DARK.cursor).toBe("#e2dddc");
+    expect(GHOSTTY_DEFAULT_DARK.selectionBackground).toBe("#584e51");
+    expect(GHOSTTY_DEFAULT_DARK.selectionForeground).toBe("#e2dddc");
   });
 
   it("falls back cleanly with no stylesheet, and derives the scrollbar from chrome ink", () => {

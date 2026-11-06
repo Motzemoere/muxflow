@@ -319,7 +319,7 @@ fn window_background(
             .map_or(true, |theme| theme == tauri::Theme::Dark),
     };
     if dark {
-        tauri::window::Color(0x28, 0x2c, 0x34, 0xff)
+        tauri::window::Color(0x0c, 0x0b, 0x0c, 0xff)
     } else {
         tauri::window::Color(0xfa, 0xfa, 0xfa, 0xff)
     }

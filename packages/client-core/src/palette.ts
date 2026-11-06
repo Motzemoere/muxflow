@@ -1,35 +1,36 @@
 // Shared palette; desktop CSS is generated from this source. Layout stays platform-specific.
 export const colors = {
   // ── Chrome surfaces ───────────────────────────────────────────────────
-  chromeBg: "#282c34",
-  chromeRaised: "#2c313a",
-  chromeHairline: "#313640",
-  chromeBorder: "#3e4451",
-  chromeHover: "#2f343e",
-  chromeSelected: "#353b45",
+  // Omarchy "Last Horizon"; the surface steps are lifted from its #0c0b0c background.
+  chromeBg: "#0c0b0c",
+  chromeRaised: "#131113",
+  chromeHairline: "#1c191b",
+  chromeBorder: "#3a3336",
+  chromeHover: "#1a1719",
+  chromeSelected: "#251f22",
   // A selected row's edge. Dark fills a selected row a step lighter and needs no
   // edge, so it is the fill itself; light draws white rows that need one.
-  chromeSelectedEdge: "#353b45",
+  chromeSelectedEdge: "#251f22",
 
   // ── Chrome ink ────────────────────────────────────────────────────────
-  chromeInk: "#c4c8c6",
-  chromeInkStrong: "#ffffff",
-  // Raised from #8f96a1 and #636b78, which drew hints and labels at 2.4:1 on a
-  // dialog. Faint stays a step below dim, so the two still read as two levels.
-  chromeDim: "#a4abb6",
-  chromeFaint: "#7f8794",
+  chromeInk: "#cfd3cd",
+  chromeInkStrong: "#fafcfb",
+  // Faint stays a step below dim, so the two still read as two levels.
+  chromeDim: "#a89fa1",
+  chromeFaint: "#857a7d",
 
   // ── Accent and destructive ────────────────────────────────────────────
-  accent: "#7aa6da",
-  accentInk: "#282c34",
-  accentWash: "rgba(122, 166, 218, 0.12)",
-  danger: "#cc6566",
-  dangerInk: "#e79596",
-  dangerWash: "rgba(204, 101, 102, 0.13)",
+  accent: "#b59790",
+  accentInk: "#0c0b0c",
+  accentWash: "rgba(181, 151, 144, 0.12)",
+  danger: "#c38b7b",
+  dangerInk: "#ddb0a3",
+  dangerWash: "rgba(195, 139, 123, 0.13)",
 
   // ── Status ────────────────────────────────────────────────────────────
-  ok: "#28c840",
-  warn: "#febc2e",
+  // The theme has no usable yellow, so warn is a muted amber in its tone.
+  ok: "#87a9b0",
+  warn: "#d6b48c",
 
   // ── Elevation ─────────────────────────────────────────────────────────
   // Shadows and scrims mix this toward transparent at their own strength.
@@ -37,32 +38,33 @@ export const colors = {
 } as const;
 
 export const terminalTheme = {
-  background: "#282c34",
-  foreground: "#ffffff",
-  cursor: "#ffffff",
-  cursorAccent: "#353a44",
-  selectionBackground: "#ffffff",
-  selectionForeground: "#282c34",
-  black: "#1d1f21",
-  red: "#cc6566",
-  green: "#b6bd68",
-  yellow: "#f0c674",
-  blue: "#82a2be",
-  magenta: "#b294bb",
-  cyan: "#8abeb7",
-  white: "#c4c8c6",
-  brightBlack: "#666666",
-  brightRed: "#d54e53",
-  brightGreen: "#b9ca4b",
-  brightYellow: "#e7c547",
-  brightBlue: "#7aa6da",
-  brightMagenta: "#c397d8",
-  brightCyan: "#70c0b1",
-  brightWhite: "#eaeaea",
+  background: "#0c0b0c",
+  foreground: "#fafcfb",
+  cursor: "#e2dddc",
+  cursorAccent: "#0c0b0c",
+  selectionBackground: "#584e51",
+  selectionForeground: "#e2dddc",
+  black: "#0c0b0c",
+  red: "#c38b7b",
+  green: "#87a9b0",
+  yellow: "#6b5e73",
+  blue: "#b59790",
+  magenta: "#c4d8e2",
+  cyan: "#a5a0b6",
+  white: "#fafcfb",
+  brightBlack: "#584e51",
+  brightRed: "#c38b7b",
+  brightGreen: "#87a9b0",
+  brightYellow: "#6b5e73",
+  brightBlue: "#b59790",
+  brightMagenta: "#c4d8e2",
+  brightCyan: "#a5a0b6",
+  brightWhite: "#e2dddc",
 } as const;
 
 export const stateColors = {
-  working: terminalTheme.yellow,
+  // The theme's yellow (#6b5e73) is too dark to read as a status dot on its background.
+  working: terminalTheme.magenta,
   blocked: terminalTheme.red,
   done: terminalTheme.cyan,
   unknown: colors.chromeDim,
